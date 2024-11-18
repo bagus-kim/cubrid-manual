@@ -610,7 +610,7 @@ RANDOM, RAND
 .. function:: RANDOM ( [seed] )
 .. function:: RAND ( [seed] )
 
-    The function **RANDOM** or **RAND** returns any integer value, which is greater than or equal to 0 and less than 2 31, and a *seed* argument that is **INTEGER** type can be specified. It rounds up real numbers and an error is returned when it exceeds the range of **INTEGER**. 
+    The function **RANDOM** or **RAND** returns any integer value, which is greater than or equal to 0 and less than 2^31 , and a *seed* argument that is **INTEGER** type can be specified. It rounds up real numbers and an error is returned when it exceeds the range of **INTEGER**. 
 
     When *seed* value is not given, the **RAND** function performs the operation only once to produce only one random number regardless of the number of rows where the operation is output, but the **RANDOM** function performs the operation every time the statement is repeated to produce a different random value for each row. Therefore, to output rows in a random order, you must use the **RANDOM** function. 
 
