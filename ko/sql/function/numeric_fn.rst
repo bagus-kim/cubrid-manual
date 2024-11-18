@@ -20,8 +20,9 @@ ABS
 .. code-block:: sql
 
     --it returns the absolute value of the argument
-    SELECT ABS(12.3), ABS(-12.3), ABS(-12.3000), ABS(0.0);
+    csql> SELECT ABS(12.3), ABS(-12.3), ABS(-12.3000), ABS(0.0);
 
+    === <Result of SELECT Command in Line 1> ===
     
       abs(12.3)             abs(-12.3)            abs(-12.3000)         abs(0.0)
     ================================================================================
@@ -39,11 +40,13 @@ ACOS
 
 .. code-block:: sql
 
-    SELECT ACOS(1), ACOS(0), ACOS(-1);
- 
-      acos(1)                   acos(0)                  acos(-1)
-    ==================================================================================
-      0.000000000000000e+00     1.570796326794897e+00     3.141592653589793e+00
+    csql> SELECT ACOS(1), ACOS(0), ACOS(-1);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                   acos(1)                   acos(0)                  acos(-1)
+    ==============================================================================
+     0.000000000000000e+00     1.570796326794897e+00     3.141592653589793e+00
 
 ASIN
 ====
@@ -57,12 +60,13 @@ ASIN
 
 .. code-block:: sql
 
-    SELECT ASIN(1), ASIN(0), ASIN(-1);
+    csql> SELECT ASIN(1), ASIN(0), ASIN(-1);
 
-    
-      asin(1)                   asin(0)                  asin(-1)
+    === <Result of SELECT Command in Line 23> ===
+
+                    asin(1)                   asin(0)                  asin(-1)
     ==============================================================================
-      1.570796326794897e+00     0.000000000000000e+00    -1.570796326794897e+00
+        1.570796326794897e+00     0.000000000000000e+00    -1.570796326794897e+00
 
 ATAN
 ====
@@ -76,12 +80,14 @@ ATAN
 
 .. code-block:: sql
 
-    SELECT ATAN(1), ATAN(-1), ATAN(1,-1);
+    csql> SELECT ATAN(1), ATAN(-1), ATAN(1,-1);
 
-    
-                       atan(1)                  atan(-1)              atan2(1, -1)
+    === <Result of SELECT Command in Line 4> ===
+
+                      atan(1)                  atan(-1)              atan2(1, -1)
     ==============================================================================
-         7.853981633974483e-01    -7.853981633974483e-01     2.356194490192345e+000
+        7.853981633974483e-01    -7.853981633974483e-01     2.356194490192345e+00
+
 
 ATAN2
 =====
@@ -95,12 +101,15 @@ ATAN2
 
 .. code-block:: sql
 
-    SELECT ATAN2(1,1), ATAN2(-1,-1), ATAN2(Pi(),0);
+    csql> SELECT ATAN2(1,1), ATAN2(-1,-1), ATAN2(Pi(),0);
 
-    
-    atan2(1, 1)             atan2(-1, -1)           atan2( pi(), 0)
+    === <Result of SELECT Command in Line 1> ===
+
+               atan2(1, 1)             atan2(-1, -1)           atan2( pi(), 0)
     ==============================================================================
      7.853981633974483e-01    -2.356194490192345e+00     1.570796326794897e+00
+
+    
 
 CEIL
 ====
@@ -114,20 +123,24 @@ CEIL
 
 .. code-block:: sql
 
-    SELECT CEIL(34567.34567), CEIL(-34567.34567);
+    csql> SELECT CEIL(34567.34567), CEIL(-34567.34567);
 
-    
-      ceil(34567.34567)     ceil(-34567.34567)
+    === <Result of SELECT Command in Line 3> ===
+
+    ceil(34567.34567)     ceil(-34567.34567)
     ============================================
-      34568.00000           -34567.00000
+    34568.00000           -34567.00000
 
-::     
-    SELECT CEIL(34567.1), CEIL(-34567.1);
 
-    
-      ceil(34567.1)         ceil(-34567.1)
-    =============================
-      34568.0         -34567.0
+    csql> SELECT CEIL(34567.1), CEIL(-34567.1);
+
+    === <Result of SELECT Command in Line 1> ===
+
+    ceil(34567.1)         ceil(-34567.1)
+    ============================================
+    34568.0               -34567.0
+
+::
 
 CONV
 ====
@@ -143,21 +156,30 @@ CONV
 
 .. code-block:: sql
 
-    SELECT CONV('f',16,2);
+    csql> SELECT CONV('f',16,2);
 
+    === <Result of SELECT Command in Line 1> ===
+
+    conv('f', 16, 2)
+    ======================
     '1111'
 
-.. code-block:: sql
+    csql> SELECT CONV('6H',20,8);
 
-    SELECT CONV('6H',20,8);
-    
+    === <Result of SELECT Command in Line 1> ===
+
+    conv('6H', 20, 8)
+    ======================
     '211'
 
-.. code-block:: sql
+    csql> SELECT CONV(-30,10,-20);
 
-    SELECT CONV(-30,10,-20);
-    
+    === <Result of SELECT Command in Line 1> ===
+
+    conv(-30, 10, -20)
+    ======================
     '-1A'
+::
 
 COS
 ===
@@ -171,11 +193,13 @@ COS
 
 .. code-block:: sql
 
-    SELECT COS(pi()/6), COS(pi()/3), COS(pi());
+    csql> SELECT COS(pi()/6), COS(pi()/3), COS(pi());
 
-         cos( pi()/6)              cos( pi()/3)                cos( pi())
+    === <Result of SELECT Command in Line 1> ===
+
+                  cos( pi()/6)              cos( pi()/3)                cos( pi())
     ==============================================================================
-      8.660254037844387e-01     5.000000000000001e-01    -1.000000000000000e+00
+        8.660254037844387e-01     5.000000000000001e-01    -1.000000000000000e+00
 
 COT
 ===
@@ -189,11 +213,14 @@ COT
 
 .. code-block:: sql
 
-    SELECT COT(1), COT(-1), COT(0);
- 
-      cot(1)                   cot(-1)   cot(0)
+    csql> SELECT COT(1), COT(-1), COT(0);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                        cot(1)                   cot(-1)   cot(0)
     ==========================================================================
-      6.420926159343306e-01    -6.420926159343306e-01  NULL
+        6.420926159343306e-01    -6.420926159343306e-01  NULL
+::
 
 CRC32
 =====
@@ -206,11 +233,14 @@ CRC32
 
 .. code-block:: sql
 
-    SELECT CRC32('cubrid');
- 
-       crc32('cubrid')
+    csql> SELECT CRC32('cubrid');
+
+    === <Result of SELECT Command in Line 1> ===
+
+        crc32('cubrid')
     ==================
-             908740081
+            908740081
+::
 
 
 DEGREES
@@ -225,11 +255,13 @@ DEGREES
 
 .. code-block:: sql
 
-    SELECT DEGREES(pi()/6), DEGREES(pi()/3), DEGREES (pi());
-   
-      degrees( pi()/6)          degrees( pi()/3)            degrees( pi())
+    csql> SELECT DEGREES(pi()/6), DEGREES(pi()/3), DEGREES (pi());
+
+    === <Result of SELECT Command in Line 1> ===
+
+            degrees( pi()/6)          degrees( pi()/3)            degrees( pi())
     ==============================================================================
-      3.000000000000000e+01     5.999999999999999e+01     1.800000000000000e+02
+        3.000000000000000e+01     5.999999999999999e+01     1.800000000000000e+02
 
 DRANDOM, DRAND
 ==============
@@ -246,26 +278,27 @@ DRANDOM, DRAND
 
 .. code-block:: sql
 
-    SELECT DRAND(), DRAND(1), DRAND(1.4);
+    csql> SELECT DRAND(), DRAND(1), DRAND(1.4);
 
-                       drand()                  drand(1)                drand(1.4)
+    === <Result of SELECT Command in Line 1> ===
+
+                      drand()                  drand(1)                drand(1.4)
     ==============================================================================
-        2.849646518006921e-001    4.163034446537495e-002    4.163034446537495e-002
-     
+        7.367713688686663e-01     4.163034477187821e-02     4.163034477187821e-02
+
+
 .. code-block:: sql
 
-    CREATE TABLE rand_tbl (
+    csql> CREATE TABLE rand_tbl (
         id INT,
         name VARCHAR(255)
     );
     
-    INSERT INTO rand_tbl VALUES 
+    csql> INSERT INTO rand_tbl VALUES 
         (1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), 
         (6, 'f'), (7, 'g'), (8, 'h'), (9, 'i'), (10, 'j');
 
-::
-
-    SELECT * FROM rand_tbl;
+    csql> SELECT * FROM rand_tbl;
     
                id  name
     ===================================
@@ -279,14 +312,17 @@ DRANDOM, DRAND
                 8  'h'
                 9  'i'
                10  'j'
-     
+
+
 .. code-block:: sql
 
     --drandom() returns random values on every row
-    SELECT DRAND(), DRANDOM() FROM rand_tbl;
+    csql> SELECT DRAND(), DRANDOM() FROM rand_tbl;
+
+    === <Result of SELECT Command in Line 1> ===
      
-       drand()                 drandom()
-    ==============================================================================
+                    drand()                 drandom()
+    ===================================================
        7.638782921842098e-001    1.018707846308786e-001
        7.638782921842098e-001    3.191320535905026e-001
        7.638782921842098e-001    3.461714529862361e-001
@@ -298,23 +334,25 @@ DRANDOM, DRAND
        7.638782921842098e-001    5.279091769157994e-001
        7.638782921842098e-001    7.021088290047914e-001
      
-.. code-block:: sql
-
     --selecting rows in random order
-    SELECT * FROM rand_tbl ORDER BY DRANDOM();
-     
-               id  name
-    ===================================
-                6  'f'
-                2  'b'
-                7  'g'
-                8  'h'
-                1  'a'
-                4  'd'
-               10  'j'
-                9  'i'
-                5  'e'
-                3  'c'
+    csql> SELECT * FROM rand_tbl ORDER BY DRANDOM();
+
+    === <Result of SELECT Command in Line 1> ===
+
+            id  name
+        =============
+           10  'j'
+            9  'i'
+            4  'd'
+            6  'f'
+            8  'h'
+            2  'b'
+            3  'c'
+            5  'e'
+            1  'a'
+            7  'g'
+
+
 
 EXP
 ===
@@ -328,19 +366,24 @@ EXP
 
 .. code-block:: sql
 
-    SELECT EXP(1), EXP(0);
-  
-      exp(1)                    exp(0)
-    ====================================================
-      2.718281828459045e+000 1.000000000000000e+000
-     
-.. code-block:: sql
+    csql> SELECT EXP(1), EXP(0);
 
-    SELECT EXP(-1), EXP(2.00);
-  
-      exp(-1)                 exp(2.00)
+    === <Result of SELECT Command in Line 1> ===
+
+                        exp(1)                    exp(0)
     ====================================================
-      3.678794411714423e-001 7.389056098930650e+000
+         2.718281828459045e+00     1.000000000000000e+00
+     
+
+    csql> SELECT EXP(-1), EXP(2.00);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                        exp(-1)                 exp(2.00)
+    ====================================================
+         3.678794411714423e-01     7.389056098930650e+00
+
+::
 
 FLOOR
 =====
@@ -355,19 +398,23 @@ FLOOR
 .. code-block:: sql
 
     --it returns the largest integer less than or equal to the arguments
-    SELECT FLOOR(34567.34567), FLOOR(-34567.34567);
-      
-      floor(34567.34567)    floor(-34567.34567)
-    ============================================
-      34567.00000           -34568.00000
-     
-.. code-block:: sql
+    csql> SELECT FLOOR(34567.34567), FLOOR(-34567.34567);
 
-    SELECT FLOOR(34567), FLOOR(-34567);
-       
-      floor(34567)   floor(-34567)
-    =============================
-             34567         -34567
+    === <Result of SELECT Command in Line 1> ===
+
+        floor(34567.34567)    floor(-34567.34567)
+    ============================================
+              34567.00000           -34568.00000
+     
+
+    csql> SELECT FLOOR(34567), FLOOR(-34567);
+
+    === <Result of SELECT Command in Line 1> ===
+
+        floor(34567)   floor(-34567)
+    ===============================
+              34567          -34567
+::
 
 HEX
 ===
@@ -381,11 +428,15 @@ HEX
 
 .. code-block:: sql
 
-    SELECT HEX('ab'), HEX(128), CONV(HEX(128), 16, 10);
+    csql> SELECT HEX('ab'), HEX(128), CONV(HEX(128), 16, 10);
 
-    hex('ab')             hex(128)              conv(hex(128), 16, 10)
+    === <Result of SELECT Command in Line 1> ===
+
+    hex('ab')             hex(128)              conv( hex(128), 16, 10)
     ==================================================================
-      '6162'                '80'                  '128'
+    '6162'                '80'                  '128'
+
+::    
 
 LN
 ==
@@ -399,11 +450,15 @@ LN
 
 .. code-block:: sql
 
-    SELECT ln(1), ln(2.72);
-  
-         ln(1)                     ln(2.72)
-    =====================================================
+    csql> SELECT ln(1), ln(2.72);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                         ln(1)                  ln(2.72)
+    ====================================================
          0.000000000000000e+00     1.000631880307906e+00
+
+::
 
 LOG2
 ====
@@ -417,11 +472,15 @@ LOG2
 
 .. code-block:: sql
 
-    SELECT log2(1), log2(8);
-    
-         log2(1)                   log2(8)
-    ======================================================
-         0.000000000000000e+00     3.000000000000000e+00  
+    csql> SELECT log2(1), log2(8);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                    log2(1)                   log2(8)
+    ====================================================
+        0.000000000000000e+00     3.000000000000000e+00
+
+::
 
 LOG10
 =====
@@ -435,11 +494,15 @@ LOG10
 
 .. code-block:: sql
 
-    SELECT log10(1), log10(1000);
-    
-         log10(1)                  log10(1000)
+    csql> SELECT log10(1), log10(1000);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                    log10(1)               log10(1000)
     ====================================================
-         0.000000000000000e+00     3.000000000000000e+00
+        0.000000000000000e+00     3.000000000000000e+00
+
+::
 
 MOD
 ===
@@ -474,19 +537,24 @@ MOD
 .. code-block:: sql
 
     --it returns the reminder of m divided by n
-    SELECT MOD(11, 4), MOD(11, -4), MOD(-11, 4), MOD(-11, -4), MOD(11,0);
-    
-        mod(11, 4)   mod(11, -4)   mod(-11, 4)   mod(-11, -4)   mod(11, 0)
-    =====================================================================
-                3             3            -3             -3           11
+    csql> SELECT MOD(11, 4), MOD(11, -4), MOD(-11, 4), MOD(-11, -4), MOD(11,0);
 
-.. code-block:: sql
+    === <Result of SELECT Command in Line 1> ===
+
+       mod(11, 4)   mod(11, -4)   mod(-11, 4)   mod(-11, -4)   mod(11, 0)
+    =====================================================================
+               3             3            -3             -3           11
+
      
-    SELECT MOD(11.0, 4), MOD(11.000, 4), MOD(11, 4.0), MOD(11, 4.000);
-    
-      mod(11.0, 4)          mod(11.000, 4)        mod(11, 4.0)          mod(11, 4.000)
-    =========================================================================
-      3.0                   3.000                 3.0                   3.000
+    csql> SELECT MOD(11.0, 4), MOD(11.000, 4), MOD(11, 4.0), MOD(11, 4.000);
+
+    === <Result of SELECT Command in Line 1> ===
+
+            mod(11.0, 4)          mod(11.000, 4)        mod(11, 4.0)          mod(11, 4.000)
+    ========================================================================================
+                    3.0                   3.000                 3.0                   3.000
+
+::
 
 PI
 ==
@@ -499,11 +567,15 @@ PI
 
 .. code-block:: sql
 
-    SELECT PI(), PI()/2;
-    
-         pi()                      pi()/2
+    csql> SELECT PI(), PI()/2;
+
+    === <Result of SELECT Command in Line 1> ===
+
+                        pi()                    pi()/2
     ====================================================
-         3.141592653589793e+00     1.570796326794897e+00
+        3.141592653589793e+00     1.570796326794897e+00
+
+::
 
 POW, POWER
 ==========
@@ -519,18 +591,23 @@ POW, POWER
 
 .. code-block:: sql
 
-    SELECT POWER(2, 5), POWER(-2, 5), POWER(0, 0), POWER(1,0);
-    
-     power(2, 5)              power(-2, 5)               power(0, 0)               power(1, 0)
-    ====================================================================================================
-     3.200000000000000e+01    -3.200000000000000e+01     1.000000000000000e+00     1.000000000000000e+00
+    csql> SELECT POWER(2, 5), POWER(-2, 5), POWER(0, 0), POWER(1,0);
+
+    === <Result of SELECT Command in Line 1> ===
+
+            power(2, 5)              power(-2, 5)               power(0, 0)               power(1, 0)
+    ========================================================================================================
+    3.200000000000000e+01    -3.200000000000000e+01     1.000000000000000e+00     1.000000000000000e+00
      
-.. code-block:: sql
 
     --it returns an error when the negative base is powered by a non-int exponent
-    SELECT POWER(-2, -5.1), POWER(-2, -5.1);
-         
+    csql> SELECT POWER(-2, -5.1), POWER(-2, -5.1);
+
+    In line 1, column 33,
+
     ERROR: Argument of power() is out of range.
+
+::
 
 RADIANS
 =======
@@ -544,11 +621,15 @@ RADIANS
 
 .. code-block:: sql
 
-    SELECT RADIANS(90), RADIANS(180), RADIANS(360);
-    
-         radians(90)               radians(180)              radians(360)
+    csql> SELECT RADIANS(90), RADIANS(180), RADIANS(360);
+
+    === <Result of SELECT Command in Line 1> ===
+
+              radians(90)              radians(180)              radians(360)
     ==============================================================================
-         1.570796326794897e+00     3.141592653589793e+00     6.283185307179586e+00
+    1.570796326794897e+00     3.141592653589793e+00     6.283185307179586e+00
+
+::
 
 RANDOM, RAND
 ============
@@ -569,15 +650,20 @@ RANDOM, RAND
 
 .. code-block:: sql
 
-    SELECT RAND(), RAND(1), RAND(1.4); 
-           rand()      rand(1)    rand(1.4)
-    =======================================
-       1526981144     89400484     89400484
-     
+    csql> SELECT RAND(), RAND(1), RAND(1.4);
+
+    === <Result of SELECT Command in Line 1> ===
+
+            rand()      rand(1)    rand(1.4)
+     =======================================
+         752289975     89400484     89400484
+
+
 .. code-block:: sql
 
     --creating a new table
-    SELECT * FROM rand_tbl;
+    csql> SELECT * FROM rand_tbl;
+
                id  name
     ===================================
                 1  'a'
@@ -591,41 +677,43 @@ RANDOM, RAND
                 9  'i'
                10  'j'
      
-.. code-block:: sql
-
     --random() returns random values on every row
-    SELECT RAND(),RANDOM() FROM rand_tbl;
-    
-           rand()       random()
-    ============================
-       2078876566     1753698891
-       2078876566     1508854032
-       2078876566      625052132
-       2078876566      279624236
-       2078876566     1449981446
-       2078876566     1360529082
-       2078876566     1563510619
-       2078876566     1598680194
-       2078876566     1160177096
-       2078876566     2075234419
-     
-     
-.. code-block:: sql
+    csql>  SELECT RAND(),RANDOM() FROM rand_tbl;
 
+    === <Result of SELECT Command in Line 1> ===
+
+        rand()     random()
+    ==========================
+        585573635   1693326007
+        585573635   1528640663
+        585573635   1009909786
+        585573635    970876890
+        585573635     72948256
+        585573635    325876137
+        585573635    589517440
+        585573635   1516366838
+        585573635    765363041
+        585573635     36598111
+     
     --selecting rows in random order
-    SELECT * FROM rand_tbl ORDER BY RANDOM();
-              id  name
+    csql> SELECT * FROM rand_tbl ORDER BY RANDOM();
+
+    === <Result of SELECT Command in Line 1> ===
+
+            id  name
     ===================================
-                6  'f'
+                9  'i'
+                4  'd'
                 1  'a'
                 5  'e'
-                4  'd'
-                2  'b'
                 7  'g'
-               10  'j'
-                9  'i'
-                3  'c'
                 8  'h'
+                6  'f'
+                2  'b'
+                10  'j'
+                3  'c'
+
+
 
 ROUND
 =====
@@ -641,26 +729,33 @@ ROUND
 .. code-block:: sql
 
     --it rounds a number to one decimal point when the second argument is omitted
-    SELECT ROUND(34567.34567), ROUND(-34567.34567);
-      round(34567.34567, 0)   round(-34567.34567, 0)
+    csql> SELECT ROUND(34567.34567), ROUND(-34567.34567);
+
+    === <Result of SELECT Command in Line 1> ===
+
+    round(34567.34567, 0)   round(-34567.34567, 'default')
     ============================================
-      34567.00000           -34567.00000
-     
-.. code-block:: sql
+    34567.00000           -34567.00000
      
     --it rounds a number to three decimal point
-    SELECT ROUND(34567.34567, 3), ROUND(-34567.34567, 3)  FROM db_root;
-     round(34567.34567, 3)   round(-34567.34567, 3)
-    ============================================
-      34567.34600           -34567.34600
-     
-.. code-block:: sql
+    csql> SELECT ROUND(34567.34567, 3), ROUND(-34567.34567, 3)  FROM db_root;
 
-    --it rounds a number three digit to the left of the decimal point
-    SELECT ROUND(34567.34567, -3), ROUND(-34567.34567, -3);
-      round(34567.34567, -3)   round(-34567.34567, -3)
+    === <Result of SELECT Command in Line 1> ===
+
+    round(34567.34567, 3)   round(-34567.34567, 3)
     ============================================
-      35000.00000           -35000.00000
+    34567.34600           -34567.34600
+     
+    --it rounds a number three digit to the left of the decimal point
+    csql> SELECT ROUND(34567.34567, -3), ROUND(-34567.34567, -3);
+
+    === <Result of SELECT Command in Line 1> ===
+
+    round(34567.34567, -3)   round(-34567.34567, -3)
+    ============================================
+    35000.00000           -35000.00000
+
+::
 
 SIGN
 ====
@@ -675,10 +770,14 @@ SIGN
 .. code-block:: sql
 
     --it returns the sign of the argument
-    SELECT SIGN(12.3), SIGN(-12.3), SIGN(0);
-         sign(12.3)   sign(-12.3)      sign(0)
+    csql> SELECT SIGN(12.3), SIGN(-12.3), SIGN(0);
+
+    === <Result of SELECT Command in Line 1> ===
+
+    sign(12.3)   sign(-12.3)      sign(0)
     ========================================
                 1            -1            0
+::
 
 SIN
 ===
@@ -692,10 +791,15 @@ SIN
 
 .. code-block:: sql
 
-    SELECT SIN(pi()/6), SIN(pi()/3), SIN(pi());
-         sin( pi()/6)              sin( pi()/3)              sin( pi())
+    csql> SELECT SIN(pi()/6), SIN(pi()/3), SIN(pi());
+
+    === <Result of SELECT Command in Line 1> ===
+
+            sin( pi()/6)              sin( pi()/3)                sin( pi())
     ==============================================================================
-         4.999999999999999e-01     8.660254037844386e-01     1.224646799147353e-16
+    4.999999999999999e-01     8.660254037844386e-01     1.224646799147353e-16
+
+::
 
 SQRT
 ====
@@ -709,10 +813,14 @@ SQRT
 
 .. code-block:: sql
 
-    SELECT SQRT(4), SQRT(16.0);
-         sqrt(4)                   sqrt(16.0)
+    csql> SELECT SQRT(4), SQRT(16.0);
+
+    === <Result of SELECT Command in Line 1> ===
+
+                      sqrt(4)                sqrt(16.0)
     ====================================================
-         2.000000000000000e+00     4.000000000000000e+00
+        2.000000000000000e+00     4.000000000000000e+00
+::
 
 TAN
 ===
@@ -726,10 +834,14 @@ TAN
 
 .. code-block:: sql
 
-    SELECT TAN(pi()/6), TAN(pi()/3), TAN(pi()/4);
-         tan( pi()/6)              tan( pi()/3)              tan( pi()/4)
+    csql> SELECT TAN(pi()/6), TAN(pi()/3), TAN(pi()/4);
+
+    === <Result of SELECT Command in Line 1> ===
+
+              tan( pi()/6)              tan( pi()/3)              tan( pi()/4)
     ==============================================================================
-         5.773502691896257e-01     1.732050807568877e+00     9.999999999999999e-01
+     5.773502691896257e-01     1.732050807568877e+00     9.999999999999999e-01
+::
 
 TRUNC, TRUNCATE
 ===============
@@ -746,26 +858,33 @@ TRUNC, TRUNCATE
 .. code-block:: sql
 
     --it returns a number truncated to 0 places
-    SELECT TRUNC(34567.34567), TRUNCATE(34567.34567, 0);
-      trunc(34567.34567, 0)   trunc(34567.34567, 0)
-    ============================================
-      34567.00000            34567.00000
-     
-.. code-block:: sql
+    csql> SELECT TRUNC(34567.34567), TRUNCATE(34567.34567, 0);
 
+    === <Result of SELECT Command in Line 1> ===
+
+    trunc(34567.34567, 0)   trunc(34567.34567, 0)
+    ============================================
+    34567.00000           34567.00000
+     
     --it returns a number truncated to three decimal places
-    SELECT TRUNC(34567.34567, 3), TRUNC(-34567.34567, 3);
-      trunc(34567.34567, 3)   trunc(-34567.34567, 3)
-    ============================================
-      34567.34500           -34567.34500
-     
-.. code-block:: sql
+    csql> SELECT TRUNC(34567.34567, 3), TRUNC(-34567.34567, 3);
 
-    --it returns a number truncated to three digits left of the decimal point
-    SELECT TRUNC(34567.34567, -3), TRUNC(-34567.34567, -3);
-      trunc(34567.34567, -3)   trunc(-34567.34567, -3)
+    === <Result of SELECT Command in Line 1> ===
+
+    trunc(34567.34567, 3)   trunc(-34567.34567, 3)
     ============================================
-      34000.00000           -34000.00000
+    34567.34500           -34567.34500
+     
+    --it returns a number truncated to three digits left of the decimal point
+    csql> SELECT TRUNC(34567.34567, -3), TRUNC(-34567.34567, -3);
+
+    === <Result of SELECT Command in Line 1> ===
+
+    trunc(34567.34567, -3)   trunc(-34567.34567, -3)
+    ============================================
+    34000.00000           -34000.00000
+
+::
 
 WIDTH_BUCKET
 ============
@@ -798,18 +917,18 @@ WIDTH_BUCKET
 
 .. code-block:: sql
 
-    CREATE TABLE t_score (name VARCHAR(10), score INT);
-    INSERT INTO t_score VALUES
-        ('Amie', 60),
-        ('Jane', 80),
-        ('Lora', 60),
-        ('James', 75),
-        ('Peter', 70),
-        ('Tom', 50),
-        ('Ralph', 99),
-        ('David', 55);
+    csql> CREATE TABLE t_score (name VARCHAR(10), score INT);
+    csql> INSERT INTO t_score VALUES
+            ('Amie', 60),
+            ('Jane', 80),
+            ('Lora', 60),
+            ('James', 75),
+            ('Peter', 70),
+            ('Tom', 50),
+            ('Ralph', 99),
+            ('David', 55);
 
-    SELECT name, score, WIDTH_BUCKET (score, 80, 50, 3) grade 
+    csql> SELECT name, score, WIDTH_BUCKET (score, 80, 50, 3) grade 
     FROM t_score 
     ORDER BY grade ASC, score DESC;
    
@@ -830,8 +949,8 @@ WIDTH_BUCKET
 
 .. code-block:: sql
 
-    CREATE TABLE t_customer (name VARCHAR(10), birthdate DATE);
-    INSERT INTO t_customer VALUES
+    csql> CREATE TABLE t_customer (name VARCHAR(10), birthdate DATE);
+    csql> INSERT INTO t_customer VALUES
         ('Amie', date'1978-03-18'),
         ('Jane', date'1983-05-12'),
         ('Lora', date'1987-03-26'),
@@ -841,7 +960,7 @@ WIDTH_BUCKET
         ('Ralph', date'1995-03-17'),
         ('David', date'1986-07-28');
         
-    SELECT name, birthdate, WIDTH_BUCKET (birthdate, date'1950-01-01', date'2000-1-1', 5) age_group 
+    csql> SELECT name, birthdate, WIDTH_BUCKET (birthdate, date'1950-01-01', date'2000-1-1', 5) age_group 
     FROM t_customer 
     ORDER BY birthdate;
 
