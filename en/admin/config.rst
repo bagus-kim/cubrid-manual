@@ -1387,7 +1387,7 @@ The following are parameters related to SQL statements and data types supported 
 
 **block_ddl_statement**
 
-    **block_ddl_statement** is a parameter used to limit the execution of DDL (Data Definition Language) statements by the client. If the parameter is set to **no**, the given client is allowed to execute DDL statements. If it is set to **yes**, the client is not permitted to execute DDL statements. The default value is **no**.
+    **block_ddl_statement** is a parameter used to limit the execution of DDL (Data Definition Language) statements by the client. If the parameter is set to **no**, the given client is allowed to execute DDL statements. If it is set to **yes**, the client is not permitted to execute DDL statements. If set to Yes, update statistics may also be restricted. The default value is **no**.
 
 .. _block_nowhere_statement:
 
