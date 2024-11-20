@@ -1383,7 +1383,7 @@ CUBRID 설치 시 생성되는 기본 데이터베이스 환경 설정 파일(**
 
 **block_ddl_statement**
 
-    **block_ddl_statement** 는 클라이언트가 수행하는 데이터 정의문(Data Definition Language, DDL)을 제한하기 위한 파라미터로 no로 설정하면 해당 클라이언트의 데이터 정의문 수행을 허용하며, yes로 설정하면 해당 클라이언트의 데이터 정의문 수행을 허용하지 않는다. yes로 설정된 경우 통계 정보 갱신 구문(update statistics)도 제한될 수 있음을 유의하여야 한다. 기본값은 no 이다.
+    **block_ddl_statement** 는 클라이언트가 수행하는 데이터 정의문(Data Definition Language, DDL)을 제한하기 위한 파라미터로 no로 설정하면 해당 클라이언트의 데이터 정의문 수행을 허용하며, yes로 설정하면 해당 클라이언트의 데이터 정의문 수행을 허용하지 않는다. yes로 설정된 경우 통계 정보 갱신 구문(update statistics)도 제한될 수 있음을 유의하여야 한다. 기본값은 **no** 이다.
 
 .. _block_nowhere_statement:
 
